@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  mongo_db:
+    image: mongo:latest
+    container_name: "mongo_assessment"
+    ports:
+      - "27017:27017"
+  java_app:
+    build: .
+    image: assesmentfinal-java_app:latest
+    container_name: "java_assessment"
+    ports:
+      - "8080:8080"
+    links:
+      - mongo_db
+
