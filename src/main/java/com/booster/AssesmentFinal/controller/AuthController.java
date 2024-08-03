@@ -20,7 +20,6 @@ public class AuthController {
     public ResponseEntity<?> authenticate(@RequestBody Usuario usuarioReq){
         try {
             String token = authenticationService.getTokenUsuario(usuarioReq);
-            System.out.println(token);
             return new ResponseEntity<>(token, HttpStatus.OK);
         }catch (Exception e){
             return new ResponseEntity<>(e.getCause().toString(), HttpStatus.BAD_REQUEST);

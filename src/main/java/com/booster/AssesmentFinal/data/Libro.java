@@ -14,4 +14,8 @@ public class Libro {
 
     @Indexed(unique = true)
     private String nombre;
+
+    private String autor;
+
+
 }

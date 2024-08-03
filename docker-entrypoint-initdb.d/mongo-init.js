@@ -1,3 +1,6 @@
+conn = new Mongo();
+db = conn.getDB("biblioteca");
+
 db.usuarios.insertOne(
         {
             email: "default",

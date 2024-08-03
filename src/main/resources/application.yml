@@ -1,3 +1,10 @@
 grpc:
   server:
     port: 9090
+
+server:
+  port: 8081
+
+spring:
+  application:
+    name: java-assessment
