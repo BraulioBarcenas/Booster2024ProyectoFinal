@@ -20,6 +20,7 @@ public class BookServiceGrpcImpl extends BookServiceGrpc.BookServiceImplBase{
             BookResponse response = BookResponse.newBuilder()
                     .setId(libro.getId())
                     .setName(libro.getNombre())
+                    .setAutor(libro.getAutor())
                     .build();
             responseObserver.onNext(response);
         }
@@ -34,6 +35,7 @@ public class BookServiceGrpcImpl extends BookServiceGrpc.BookServiceImplBase{
         BookResponse response = BookResponse.newBuilder()
                 .setId(libro.getId())
                 .setName(libro.getNombre())
+                .setAutor(libro.getAutor())
                 .build();
         responseObserver.onNext(response);
         responseObserver.onCompleted();
@@ -48,6 +50,7 @@ public class BookServiceGrpcImpl extends BookServiceGrpc.BookServiceImplBase{
             BookResponse response = BookResponse.newBuilder()
                     .setId(libro.getId())
                     .setName(libro.getNombre())
+                    .setAutor(libro.getAutor())
                     .build();
             responseObserver.onNext(response);
         }

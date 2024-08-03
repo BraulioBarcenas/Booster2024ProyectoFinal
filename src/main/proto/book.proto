@@ -18,15 +18,18 @@ message BookRequest {
 message BookResponse {
   string id = 1;
   string name = 2;
+  string autor = 3;
 }
 
 message CreateBookRequest {
   string name = 1;
+  string autor = 2;
 }
 
 message UpdateBookRequest {
   string id = 1;
   string name = 2;
+  string autor = 3;
 }
 
 message DeleteBookRequest {
