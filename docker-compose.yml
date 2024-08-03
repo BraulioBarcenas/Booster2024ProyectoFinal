@@ -6,12 +6,21 @@ services:
     container_name: "mongo_assessment"
     ports:
       - "27017:27017"
-  java_app:
+    volumes:
+      - ./docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+  java-app:
     build: .
     image: assesmentfinal-java_app:latest
-    container_name: "java_assessment"
+    container_name: "java-assessment"
     ports:
-      - "8080:8080"
+      - "8081:8081"
     links:
       - mongo_db
 
+  gateway:
+    image: gateway:latest
+    container_name: "gateway"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - java-app

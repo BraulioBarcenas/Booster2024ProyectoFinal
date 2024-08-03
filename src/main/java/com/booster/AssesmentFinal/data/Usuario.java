@@ -5,17 +5,16 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
-@Document(collection = "libros")
 @Data
-public class Libro {
+@Document(collection = "usuarios")
+public class Usuario {
 
     @MongoId
     private String id;
 
     @Indexed(unique = true)
-    private String nombre;
+    private String email;
 
-    private String autor;
-
+    private String password;
 
 }
